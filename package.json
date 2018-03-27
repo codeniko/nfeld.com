@@ -1,0 +1,41 @@
+{
+  "name": "nfeld.com",
+  "version": "0.1.0",
+  "author": "Nikolay Feldman<niko@nfeld.com>",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:codeniko/nfeld.com.git"
+  },
+  "private": true,
+  "scripts": {
+    "start": "NODE_ENV=production react-scripts start",
+    "dev": "NODE_ENV=development react-scripts start",
+    "build": "react-scripts build",
+    "test-components": "react-scripts test --env=jsdom",
+    "test": "npm run lint && ENV=tests ./node_modules/.bin/_mocha -R spec ./test/**/*.js",
+    "eject": "react-scripts eject",
+    "lint": "eslint src test *.js --ext .js --ext .jsx",
+    "deploy-functions": "firebase deploy --only functions",
+    "deploy": "firebase deploy --only hosting",
+    "clean": "rm -rf ./artifacts ./npm-debug.log ./build"
+  },
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-router": "^3.2.0",
+    "uuid": "^3.2.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.1",
+    "chai": "~3.5.0",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-plugin-react": "^7.5.1",
+    "istanbul": "~1.0.0-alpha.2",
+    "react-scripts": "1.1.1",
+    "rewire": "^2.5.2",
+    "sinon": "~1.17.4",
+    "xunit-file": "~1.0.0"
+  }
+}

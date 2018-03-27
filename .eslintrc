@@ -1,0 +1,49 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
+  "env": {
+    "es6": true,
+    "browser": true
+  },
+  "plugins": [
+    "react"
+  ],
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "jsx": true,
+      "experimentalObjectRestSpread": true
+    },
+    "allowImportExportEverywhere": true,
+    "sourceType": "module"
+  },
+  "globals": {
+    "process": true,
+    "module": true,
+    "require": true
+  },
+  "rules": {
+    "no-console": "off",
+    "no-var": "error",
+    "vars-on-top": "error",
+    "no-param-reassign": "error",
+    "no-undef": "error",
+    "space-before-function-paren": "off",
+    "comma-style": [
+      "error",
+      "last"
+    ],
+    "no-use-before-define": [
+      "error",
+      "nofunc"
+    ],
+    "no-throw-literal": "off",
+    "no-unused-vars": "warn",
+    "react/prefer-es6-class": "error",
+    "react/sort-comp": "off",
+    "react/prop-types": "warn"
+  }
+}
