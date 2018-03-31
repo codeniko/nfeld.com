@@ -6,9 +6,9 @@ import Button from './Button'
 import Link from './Link'
 import ContactFormContainer from './ContactFormContainer'
 
-import './ContactSection.css'
+import './FooterSection.css'
 
-export default class ContactSection extends Component {
+export default class FooterSection extends Component {
   render() {
     return (
       <section id="footer">
@@ -18,7 +18,7 @@ export default class ContactSection extends Component {
           <ContactFormContainer />
 
           <ul className="contact">
-            <li className="fa-envelope"><Link href="#">niko@nfeld.com</Link></li>
+            <li className="fa-envelope"><Link href="mailto:niko@nfeld.com">niko@nfeld.com</Link></li>
             <li className="fa-phone">(347) 603-2438</li>
             <li className="fa-github"><Link href="https://www.github.com/codeniko">github.com/codeniko</Link></li>
             <li className="fa-facebook"><Link href="https://www.facebook.com/nfeld">facebook.com/nfeld</Link></li>

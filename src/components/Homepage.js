@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 import Banner from './Banner'
 import Section from './Section'
 import SectionContainer from './SectionContainer'
-import ContactSection from './ContactSection'
+import FooterSection from './FooterSection'
 import FeatureCard from './FeatureCard'
 import FeatureSection from './FeatureSection'
 import Link from './Link'
@@ -16,8 +16,8 @@ const popchat = {
   title: 'PopChat',
   subtitle:
     <span>
-      <p>Inception, development, and discontinuation of PopChat - a chatbot spawned in an attempt to provide personal assistance through a chat platform (Kik/Facebook). Ranked 2nd overall on Kik's bot shop, handling over 25 Million messages, peaking at ~500 requests per minute. Proxied over 200k messages between users before being discontinued November 30, 2017</p>
-      <p>Development with Scala and Play framework with focus on functional programming</p>
+      <p>Inception and development of PopChat - a fun chatbot designed to provide personal assistance through a chat platform (Kik/Facebook). Ranked 2nd overall on Kik's bot shop, handling over 25 Million messages, peaking at ~500 requests per minute. Proxied over 200k messages between users before being discontinued November 30, 2017.</p>
+      <p>Development with Scala and Play framework with focus on scalable functional programming.</p>
       <p><Link special target="_blank" href="https://yahoo.tumblr.com/post/153480238449/yahoo-brings-on-the-fun-bots-trivia-with-friends">See the bot's promotional post</Link></p>
     </span>,
 }
@@ -28,7 +28,7 @@ const iosSearchApp = {
   subtitle:
     <span>
       <p>Acquired ownership of Yahoo's native iOS Yahoo Search app and backends. Redesigned the app in the direction of contextual search, exploration, and personalization.</p>
-      <p>Increased user engagement on the homescreen by 3X, before the app was abandoned and sunk to 2.5 stars</p>
+      <p>Increased user engagement on the homescreen by 3X, before the app was abandoned and sunk to 2.5 stars.</p>
     </span>
 }
 
@@ -38,7 +38,7 @@ const mobileWeb = {
   subtitle:
     <span>
       <p>Development on scalable, ReactJs based search.yahoo.com optimized for mobile browsers utilized by hundreds of millions of users.</p>
-      <p>A/B testing of all new features, continuous delivery and strive for >90% code coverage</p>
+      <p>A/B testing of all new features, continuous delivery and strive for >90% code coverage.</p>
       <p>Contributed to implementation and tracking to Search for Yahoo's partnership with DoSomething.org, where Yahoo donated 10 cents per search in an effort to raise awareness and drive support for global issues.</p>
       <p><Link special target="_blank" href="https://bit.ly/searchtober">See our launch Announcement</Link></p>
   </span>,
@@ -77,7 +77,7 @@ export default class Homepage extends Component {
 
         <SectionContainer sections={sections} />
 
-        <ContactSection />
+        <FooterSection />
 
       </div>
     )
