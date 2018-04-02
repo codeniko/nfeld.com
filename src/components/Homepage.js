@@ -73,7 +73,7 @@ export default class Homepage extends Component {
     return (
       <div className="Homepage page-wrapper">
         {/* <NavHeader /> */}
-        <Banner title="Nikolay Feldman" subtitle="Software Engineer + motorcyclist + floormat for my cat" />
+        <Banner title="Nikolay Feldman" subtitle="Software Engineer • motorcyclist • floormat for my cat" />
 
         <SectionContainer sections={sections} />
 

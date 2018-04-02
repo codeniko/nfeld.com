@@ -20,9 +20,9 @@ export default class FooterSection extends Component {
           <ul className="contact">
             <li className="fa-envelope"><Link href="mailto:niko@nfeld.com">niko@nfeld.com</Link></li>
             <li className="fa-phone">(347) 603-2438</li>
-            <li className="fa-github"><Link href="https://www.github.com/codeniko">github.com/codeniko</Link></li>
-            <li className="fa-facebook"><Link href="https://www.facebook.com/nfeld">facebook.com/nfeld</Link></li>
-            {/*<li className="fa-home">San Jose, California</li> */}
+            <li className="fa-github"><Link target="_blank" href="https://www.github.com/codeniko">github.com/codeniko</Link></li>
+            <li className="fa-linkedin"><Link target="_blank" href="https://www.linkedin.com/in/nikofeld">linkedin.com/in/nikofeld</Link></li>
+            <li className="fa-facebook"><Link target="_blank" href="https://www.facebook.com/nfeld">facebook.com/nfeld</Link></li>
           </ul>
           <ul className="copyright">
             <li>&copy; Nikolay Feldman</li>

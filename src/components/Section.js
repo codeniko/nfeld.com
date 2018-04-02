@@ -1,13 +1,11 @@
 import React, { Component } from 'react'
 import classNames from 'classnames'
 
-import Link from './Link'
-
 import './Section.css'
 
 export default class Section extends Component {
   render() {
-    const { order, alt, imgUrl, imgAnchor = '#', title, subtitle, ...props } = this.props
+    const { order, alt, imgUrl, title, subtitle, ...props } = this.props
     const sectionClassName = classNames('wrapper', 'spotlight', {
       alt,
       style1: order === 1,
@@ -22,7 +20,7 @@ export default class Section extends Component {
     return (
       <section id="one" className={sectionClassName}>
         <div className="inner">
-          { imgUrl && <Link href={imgAnchor} className="image"><img src={imgUrl} alt="" /></Link> }
+          { imgUrl && <span className="image"><img src={imgUrl} alt="" /></span> }
           <div className="content">
             <h2 className="major">{title}</h2>
             { subtitleComponent }
