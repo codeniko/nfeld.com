@@ -5,7 +5,7 @@ require.extensions['.css'] = function () {
 }
 
 const Sitemap = require('react-router-sitemap')
-const routes = require('./routes')
+const routes = require('../src/routes')
 
 new Sitemap.default(routes)
   .build('https://www.nfeld.com')
