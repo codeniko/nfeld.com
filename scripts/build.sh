@@ -2,7 +2,7 @@
 
 BUILD='./build'
 
-react-scripts build && npm run build:sitemap
+react-scripts build && npm run build:sitemap && npm run build:api
 
 # remove unnecessary images that we shouldn't deploy
 if [ -d "$BUILD" ]; then

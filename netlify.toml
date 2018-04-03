@@ -1,0 +1,4 @@
+[build]
+  Command = "npm run build"
+  Functions = "v1"
+  Publish = "build"
