@@ -2,3 +2,8 @@
   Command = "npm run build:api"
   Functions = "build/api"
   Publish = "build/api"
+
+[[redirects]]
+  from = "/.netlify/functions"
+  to = "/v1"
+
