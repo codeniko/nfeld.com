@@ -1,4 +1,4 @@
 [build]
-  Command = "npm run build"
-  Functions = "v1"
-  Publish = "build"
+  Command = "npm run build:api"
+  Functions = "build/api"
+  Publish = "build/api"
