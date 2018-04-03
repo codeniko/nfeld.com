@@ -4,6 +4,5 @@
   Publish = "build/api"
 
 [[redirects]]
-  from = "/.netlify/functions"
-  to = "/v1"
-
+  from = "/log"
+  to = "/.netlify/functions/hello"
