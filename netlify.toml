@@ -1,8 +1,8 @@
 [build]
-  Command = "npm run build:api"
+  Command = "npm run build"
   Functions = "build/api"
-  Publish = "build/api"
+  Publish = "build"
 
 [[redirects]]
-  from = "/log"
+  from = "/api/log"
   to = "/.netlify/functions/hello"
