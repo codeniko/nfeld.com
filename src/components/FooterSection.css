@@ -22,7 +22,7 @@
       width: 100%;
     }
 
-    #footer .inner form {
+    #footer .inner form, #footer .inner .contact-submitted {
       margin: 0 3em 0 0;
       width: calc(50% - 1.5em);
     }
@@ -86,7 +86,7 @@
         width: 100%;
       }
 
-        #footer .inner form {
+        #footer .inner form, #footer .inner .contact-submitted {
           width: 100%;
           margin: 0 0 4em 0;
         }
@@ -113,7 +113,7 @@
         padding: 2em 2em 0.1em 2em ;
       }
 
-        #footer .inner form {
+        #footer .inner form, #footer .inner .contact-submitted {
           margin: 0 0 3em 0;
         }
 

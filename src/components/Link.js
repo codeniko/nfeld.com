@@ -3,11 +3,11 @@ import classNames from 'classnames'
 
 export default class Link extends Component {
   render() {
-    const { children, special, additionalClasses, ...props } = this.props
+    const { children, special, extraClasses, ...props } = this.props
 
     const className = classNames({
       special,
-    }, additionalClasses)
+    }, extraClasses)
 
     return <a className={className} {...props}>{children}</a>
   }

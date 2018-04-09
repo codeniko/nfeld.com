@@ -16,7 +16,7 @@ export default class NavMenu extends Component {
             <li><Link href="/">Home</Link></li>
             <li><Link href="/about">About</Link></li>
           </ul>
-          <Link href="#" additionalClasses="close" onClick={closeMenuHandler}>Close</Link>
+          <Link href="#" extraClasses="close" onClick={closeMenuHandler}>Close</Link>
         </div>
       </nav>
     )

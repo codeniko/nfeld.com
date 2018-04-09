@@ -4,6 +4,7 @@ import { checkStatus, parseJson } from '../lib/fetch-helpers'
 
 import { Form, LabeledTextArea, LabeledText } from './Form'
 import Button from './Button'
+import Spinner from './Spinner'
 
 export default class ContactFormContainer extends Component {
   constructor(props) {
@@ -13,6 +14,8 @@ export default class ContactFormContainer extends Component {
       name: '',
       email: '',
       message: '',
+      submitted: false,
+      spinner: false,
     }
 
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -33,6 +36,7 @@ export default class ContactFormContainer extends Component {
 
     if (!this.validateForm()) {
       console.debug('Form is missing fields or email is formatted incorrectly.')
+      alert('You must fill out all the fields and provide a valid email.')
       return
     }
 
@@ -51,23 +55,28 @@ export default class ContactFormContainer extends Component {
       })
     }
 
-    // todo show spinner
+    // show spinner
+    this.setState({ spinner: true })
+    const that = this
 
     fetch(endpoint, reqOptions)
       .then(checkStatus)
       .then(parseJson)
       .then(function(response) {
-        // todo hide spinner
-
+        const nextState = { spinner: false }
         if (response.error) {
           console.error('Received error on server side', response.error)
+          alert('An error occured, please try again in a little bit.')
         } else {
           console.info('Contact submission server response', response)
-          // todo remove form and show success message
+          nextState.submitted = true
         }
+        that.setState(nextState)
       })
       .catch(function(e) {
         console.error('Exception submitting contact form', e)
+        that.setState({ spinner: false })
+        alert('An error occured, please try again in a little bit.')
       })
   }
 
@@ -82,14 +91,23 @@ export default class ContactFormContainer extends Component {
   }
 
   render() {
-    const {name, email, message} = this.state
-    return (
-      <Form onSubmit={this.handleSubmit}>
-        <LabeledText extraClasses="field" value={name} onChange={this.handleNameChange} id="name" labelText="Name" />
-        <LabeledText extraClasses="field" value={email} onChange={this.handleEmailChange} id="email" labelText="Email" />
-        <LabeledTextArea extraClasses="field" value={message} onChange={this.handleMessageChange} id="message" labelText="Message" rows="4" />
-        <Button text="Send Message" />
-      </Form>
-    )
+    const {spinner, submitted, name, email, message} = this.state
+
+    if (submitted) {
+      return (
+        <div className="contact-submitted">
+          <h3>Thanks! I'll get back to you soon!</h3>
+        </div>
+      )
+    } else {
+      return (
+        <Form onSubmit={this.handleSubmit}>
+          <LabeledText extraClasses="field" value={name} onChange={this.handleNameChange} id="name" labelText="Name" />
+          <LabeledText extraClasses="field" value={email} onChange={this.handleEmailChange} id="email" labelText="Email" />
+          <LabeledTextArea extraClasses="field" value={message} onChange={this.handleMessageChange} id="message" labelText="Message" rows="4" />
+          <Button>{ spinner ? <Spinner /> : "Send Message"}</Button>
+        </Form>
+      )
+    }
   }
 }
