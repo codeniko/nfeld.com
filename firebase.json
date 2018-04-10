@@ -11,6 +11,44 @@
       }, {
         "source": "**", "destination": "/index.html"
       }
+    ],
+    "headers": [{
+        "source" : "**/*.@(jpg|jpeg|gif|png)",
+        "headers" : [{
+          "key" : "Cache-Control",
+          "value" : "max-age=7200"
+        }]
+      }, {
+        "source" : "https://www.google-analytics.com/analytics.js",
+        "headers" : [{
+          "key" : "Cache-Control",
+          "value" : "max-age=7200"
+        }]
+      }, {
+        "source" : "https://www.googletagmanager.com/gtag/js*",
+        "headers" : [{
+          "key" : "Cache-Control",
+          "value" : "max-age=900"
+        }]
+      }, {
+        "source" : "/css/font-awesome.min.css",
+        "headers" : [{
+          "key" : "Cache-Control",
+          "value" : "max-age=31536000"
+        }]
+      }, {
+        "source" : "/static/@(js|css)/main.*.@(js|css)",
+        "headers" : [{
+          "key" : "Cache-Control",
+          "value" : "max-age=31536000"
+        }]
+      }, {
+        "source" : "/index.html",
+        "headers" : [{
+          "key" : "Cache-Control",
+          "value" : "max-age=3600"
+        }]
+      }
     ]
   }
 }
