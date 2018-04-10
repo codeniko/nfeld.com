@@ -13,18 +13,41 @@
     <meta property="og:description" content="Nikolay Feldman, software engineer located in the Bay Area">
     <meta property="og:url" content="https://nfeld.com/">
     <meta property="og:site_name" content="Nikolay Feldman">
+
     <script type="application/ld+json">
 {"name":"Nikolay Feldman","description":"Nikolay Feldman, software engineer located in the Bay Area","author":{"@type":"Person","name":"Nikolay Feldman"},"@type":"WebSite","url":"https://nfeld.com/","headline":"Software Engineer","sameAs":["https://www.linkedin.com/in/nikofeld/"],"@context":"http://schema.org"}
     </script>
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116910991-1"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      window.dataLayer = window.dataLayer || []
+      function gtag(){dataLayer.push(arguments)}
+      gtag('js', new Date())
 
-      gtag('config', 'UA-116910991-1');
+      gtag('config', 'UA-116910991-1')
     </script>
+
+    <!-- Lazy load non-critical stylesheets -->
+    <script>
+      (function() {
+        function asyncLoad(url) {
+          var stylesheet = document.createElement('link')
+          stylesheet.href = url
+          stylesheet.rel = 'stylesheet'
+          stylesheet.type = 'text/css'
+          // temporarily set media to something inapplicable to ensure it'll fetch without blocking render
+          stylesheet.media = 'only x'
+          // set the media back when the stylesheet loads
+          stylesheet.onload = function() {stylesheet.media = 'all'}
+          document.getElementsByTagName('head')[0].appendChild(stylesheet)
+        }
+
+        asyncLoad('/css/font-awesome.min.css')
+        asyncLoad('https://fonts.googleapis.com/css?family=Raleway:200,700|Source+Sans+Pro:300,600,300italic,600italic')
+      }())
+    </script>
+
     <!--
       manifest.json provides metadata used when your web app is added to the
       homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
