@@ -21,7 +21,7 @@ export function getCookie(key) {
     if (i >= 0) {
       let end = cookie.indexOf(';', i + 1)
       end = end < 0 ? cookie.length : end
-      return cookie.slice(i + key.length, end)
+      return cookie.slice(i + key.length + 1, end)
     }
   }
 }
