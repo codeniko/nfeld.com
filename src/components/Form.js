@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import classNames from 'classnames'
 import { pick } from '../lib/utils'
-import uuid from 'uuid'
+import uuidv4 from 'uuid/v4'
 
 import Button from './Button'
 
@@ -58,7 +58,7 @@ export class LabeledSelect extends Component {
   renderOption(option) {
     const {text, value} = option
     if (value || value === '')
-      return <option key={uuid.v4()} value={value}>{text || value}</option>
+      return <option key={uuidv4()} value={value}>{text || value}</option>
     else
       console.error('LabeledSelect option component is missing values 1', option)
   }

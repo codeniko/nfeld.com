@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import ga from '../lib/ga-utils'
 
 //import NavHeader from './NavHeader'
 import Banner from './Banner'
@@ -57,9 +58,16 @@ export default class Homepage extends Component {
 
     this.state = {
     }
+
   }
 
   componentDidMount() {
+    setTimeout(function() {
+      if (!window.ga) {
+        console.info('ga not loaded')
+        ga.refetchGtagOrLogThroughServer()
+      }
+    }, 1000)
   }
 
   render() {

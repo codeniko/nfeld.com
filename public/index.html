@@ -13,19 +13,23 @@
     <meta property="og:description" content="Nikolay Feldman, software engineer located in the Bay Area">
     <meta property="og:url" content="https://nfeld.com/">
     <meta property="og:site_name" content="Nikolay Feldman">
+    <title>Nikolay Feldman - Software Engineer</title>
 
     <script type="application/ld+json">
 {"name":"Nikolay Feldman","description":"Nikolay Feldman, software engineer located in the Bay Area","author":{"@type":"Person","name":"Nikolay Feldman"},"@type":"WebSite","url":"https://nfeld.com/","headline":"Software Engineer","sameAs":["https://www.linkedin.com/in/nikofeld/"],"@context":"http://schema.org"}
     </script>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116910991-1"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics. If changing id, update id in ga-utils as well -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=%REACT_APP_GA_ID%"></script>
     <script>
       window.dataLayer = window.dataLayer || []
       function gtag(){dataLayer.push(arguments)}
       gtag('js', new Date())
-
-      gtag('config', 'UA-116910991-1')
+      gtag('config', '%REACT_APP_GA_ID%', {
+        useragent: window.navigator && window.navigator.userAgent || null,
+        platform: window.navigator && window.navigator.platform || null,
+      })
     </script>
 
     <!-- Lazy load non-critical stylesheets -->
@@ -48,6 +52,9 @@
       }())
     </script>
 
+    <!-- modernizr cookies and localstorage -->
+    <script src="/js/modernizr-custom.js"></script>
+
     <!--
       manifest.json provides metadata used when your web app is added to the
       homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
@@ -63,7 +70,6 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>Nikolay Feldman - Software Engineer</title>
   </head>
   <body>
     <noscript>
