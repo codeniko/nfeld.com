@@ -1,6 +1,7 @@
 import { loadScript } from './fetch-helpers'
 import { getCookie, setCookie, readFromStorage, writeToStorage } from './utils'
 import uuidv4 from 'uuid/v4'
+import querystring from 'querystring'
 
 const COOKIE_KEY = 'CID'
 const { REACT_APP_GA_ID, REACT_APP_API_HOSTNAME, REACT_APP_API_GA_PATH } = process.env
@@ -42,7 +43,21 @@ function logPageviewOnServerSide() {
     console.info('Failed to write to storage')
   }
 
-  fetch(`${REACT_APP_API_HOSTNAME}${REACT_APP_API_GA_PATH}?v=1&tid=${REACT_APP_GA_ID}&cid=${cid}&t=pageview&dp=${window.location.pathname}&dh=${window.location.hostname || window.location.host}`)
+  const params = {
+    v: 1, // version
+    t: 'pageview', // type of hit
+    dl: window.location.href, // document url
+    dr: document.referrer, // referrer
+    ul: (navigator.language || '').toLowerCase(), // user language
+    de: document.inputEncoding, // document encoding
+    dt: document.title, // document title
+    sr: `${window.screen.width}x${window.screen.height}`, // screen resolution
+    cid, // client id
+    tid: REACT_APP_GA_ID, // tracking id
+  }
+  Object.keys(params).forEach(key => { ( params[key] === undefined || (typeof params[key] === 'string' && params[key].length === 0) ) && delete params[key] }) // remove invalid key/value pairs
+
+  fetch(`${REACT_APP_API_HOSTNAME}${REACT_APP_API_GA_PATH}?${querystring.stringify(params)}`)
     .then(function() {
       console.info('Successfully logged pageview through API')
     })
