@@ -1,8 +1,5 @@
 import React, { Component } from 'react'
-import classNames from 'classnames'
 
-import { Form, LabeledTextArea, LabeledText } from './Form'
-import Button from './Button'
 import Link from './Link'
 import ContactFormContainer from './ContactFormContainer'
 

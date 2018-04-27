@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import classNames from 'classnames'
 
 import Link from './Link'
 
@@ -7,7 +6,7 @@ import './FeatureCard.css'
 
 export default class FeatureCard extends Component {
   render() {
-    const { imgUrl, imgAnchor = '#', title, subtitle, ...props } = this.props
+    const { imgUrl, imgAnchor = '#', title, subtitle } = this.props
 
     return (
       <article>

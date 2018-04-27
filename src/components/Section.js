@@ -5,7 +5,7 @@ import './Section.css'
 
 export default class Section extends Component {
   render() {
-    const { order, alt, imgUrl, title, subtitle, ...props } = this.props
+    const { order, alt, imgUrl, title, subtitle } = this.props
     const sectionClassName = classNames('wrapper', 'spotlight', {
       alt,
       style1: order === 1,

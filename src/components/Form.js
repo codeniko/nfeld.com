@@ -1,9 +1,6 @@
 import React, { Component } from 'react'
 import classNames from 'classnames'
-import { pick } from '../lib/utils'
 import uuidv4 from 'uuid/v4'
-
-import Button from './Button'
 
 import './Form.css'
 
@@ -28,9 +25,9 @@ class LabeledInput extends Component {
     const className = classNames(extraClasses)
     return (
       <div className={className}>
-        { !noLabel && !labelAfterInput && <label for={inputId}>{labelText}</label> }
+        { !noLabel && !labelAfterInput && <label htmlFor={inputId}>{labelText}</label> }
         {props.children}
-        { !noLabel && labelAfterInput && <label for={inputId}>{labelText}</label> }
+        { !noLabel && labelAfterInput && <label htmlFor={inputId}>{labelText}</label> }
       </div>
     )
   }
@@ -73,8 +70,10 @@ export class LabeledSelect extends Component {
         return <optgroup label={groupLabel || text || value}>{options}</optgroup>
       } else if (value || (typeof value === 'string' && value.length >= 0)) {
         return this.renderOption(o)
-      } else
+      } else {
         console.error('LabeledSelect option component is missing values 2', o)
+        return null
+      }
     })
 
     return (

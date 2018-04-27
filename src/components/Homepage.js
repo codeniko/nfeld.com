@@ -3,11 +3,8 @@ import ga from '../lib/ga-utils'
 
 //import NavHeader from './NavHeader'
 import Banner from './Banner'
-import Section from './Section'
 import SectionContainer from './SectionContainer'
 import FooterSection from './FooterSection'
-import FeatureCard from './FeatureCard'
-import FeatureSection from './FeatureSection'
 import Link from './Link'
 
 import './Homepage.css'

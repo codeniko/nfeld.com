@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import classNames from 'classnames'
 import { checkStatus, parseJson } from '../lib/fetch-helpers'
 
 import { Form, LabeledTextArea, LabeledText } from './Form'
@@ -27,7 +26,7 @@ export default class ContactFormContainer extends Component {
 
   validateForm() {
     const { name, email, message } = this.state
-    return email.match(/^.+\@.+\..+$/) && name && message
+    return email.match(/^.+@.+\..+$/) && name && message
   }
 
   handleSubmit(e) {

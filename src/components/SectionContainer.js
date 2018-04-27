@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import classNames from 'classnames'
 import Section from './Section'
 
 export default class SectionContainer extends Component {
@@ -17,7 +16,7 @@ export default class SectionContainer extends Component {
         // alternate
         obj.alt = i % 2 === 1
 
-        return <Section {...obj} />
+        return <Section key={`section_${i}`} {...obj} />
       }
     })
 
