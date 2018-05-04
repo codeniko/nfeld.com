@@ -24,11 +24,13 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
+    "loglevel": "^1.6.1",
     "prop-types": "^15.6.0",
     "querystring": "^0.2.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-router": "^3.2.0",
+    "simple-tracker": "^0.1.0",
     "uuid": "^3.2.1"
   },
   "devDependencies": {

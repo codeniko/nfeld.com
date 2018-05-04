@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { checkStatus, parseJson } from '../lib/fetch-helpers'
+import tracker from 'simple-tracker'
+import log from 'loglevel'
 
 import { Form, LabeledTextArea, LabeledText } from './Form'
 import Button from './Button'
@@ -31,13 +33,14 @@ export default class ContactFormContainer extends Component {
 
   handleSubmit(e) {
     e.preventDefault()
-    console.debug('handling submit')
+    log.debug('handling submit')
 
     if (!this.validateForm()) {
-      console.debug('Form is missing fields or email is formatted incorrectly.')
+      log.debug('Form is missing fields or email is formatted incorrectly.')
       alert('You must fill out all the fields and provide a valid email.')
       return
     }
+    tracker.logEvent('submit_contact_form')
 
     const { name, email, message } = this.state
     const endpoint = '/sendMail'
@@ -56,25 +59,29 @@ export default class ContactFormContainer extends Component {
 
     // show spinner
     this.setState({ spinner: true })
-    const that = this
+    const self = this
 
+    const metricKey = 'contact_submit_time'
+    tracker.startTimer(metricKey)
     fetch(endpoint, reqOptions)
       .then(checkStatus)
       .then(parseJson)
       .then(function(response) {
         const nextState = { spinner: false }
+        tracker.stopTimer(metricKey)
         if (response.error) {
-          console.error('Received error on server side', response.error)
+          log.error('Received error on server side', response.error)
           alert('An error occured, please try again in a little bit.')
         } else {
-          console.info('Contact submission server response', response)
+          log.info('Contact submission server response', response)
           nextState.submitted = true
         }
-        that.setState(nextState)
+        self.setState(nextState)
       })
       .catch(function(e) {
-        console.error('Exception submitting contact form', e)
-        that.setState({ spinner: false })
+        tracker.stopTimer(metricKey)
+        log.error('Exception submitting contact form', e)
+        self.setState({ spinner: false })
         alert('An error occured, please try again in a little bit.')
       })
   }

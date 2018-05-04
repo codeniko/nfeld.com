@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import classNames from 'classnames'
 import uuidv4 from 'uuid/v4'
+import log from 'loglevel'
 
 import './Form.css'
 
@@ -57,7 +58,7 @@ export class LabeledSelect extends Component {
     if (value || value === '')
       return <option key={uuidv4()} value={value}>{text || value}</option>
     else
-      console.error('LabeledSelect option component is missing values 1', option)
+      log.error('LabeledSelect option component is missing values 1', option)
   }
 
   render() {
@@ -71,7 +72,7 @@ export class LabeledSelect extends Component {
       } else if (value || (typeof value === 'string' && value.length >= 0)) {
         return this.renderOption(o)
       } else {
-        console.error('LabeledSelect option component is missing values 2', o)
+        log.error('LabeledSelect option component is missing values 2', o)
         return null
       }
     })
