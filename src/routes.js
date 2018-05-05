@@ -23,7 +23,10 @@ function setupLogging() {
       return function() {
         // push all args into array and concat together as one message
         var messages = []
-        for (var i = 0; i < arguments.length; i++) { messages.push(arguments[i]) }
+        for (var i = 0; i < arguments.length; i++) {
+          const arg = arguments[i]
+          messages.push(typeof arg === 'object' ? JSON.stringify(arg) : arg)
+        }
         defaultHandler.apply(undefined, messages)
         tracker.logMessage(messages.join(' '), methodName)
       }
