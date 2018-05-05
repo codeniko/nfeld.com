@@ -25,7 +25,7 @@ function setupLogging() {
         var messages = []
         for (var i = 0; i < arguments.length; i++) { messages.push(arguments[i]) }
         defaultHandler.apply(undefined, messages)
-        tracker.logMessage(methodName, messages.join(' '))
+        tracker.logMessage(messages.join(' '), methodName)
       }
     } else {
       return defaultHandler
