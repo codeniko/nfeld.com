@@ -1,5 +1,5 @@
 import React from 'react'
-import { Router, Route } from 'react-router'
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import tracker from 'simple-tracker'
 import log from 'loglevel'
 
@@ -39,9 +39,14 @@ function setupLogging() {
 }
 
 const Routes = (props) => (
-  <Router {...props}>
-    {setupLogging()}
-    <Route path="/" component={Homepage} />
+  <Router>
+    <div>
+      {setupLogging()}
+      <Switch>
+        <Route exact path='/' component={Homepage} />
+        <Redirect to='/' />
+      </Switch>
+    </div>
   </Router>
 )
 
