@@ -19,7 +19,6 @@
 {"name":"Nikolay Feldman","description":"Nikolay Feldman, software engineer located in the Bay Area","author":{"@type":"Person","name":"Nikolay Feldman"},"@type":"WebSite","url":"https://nfeld.com/","headline":"Software Engineer","sameAs":["https://www.linkedin.com/in/nikofeld/"],"@context":"http://schema.org"}
     </script>
 
-
     <!-- Global site tag (gtag.js) - Google Analytics. If changing id, update id in ga-utils as well -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=%REACT_APP_GA_ID%"></script>
     <script>
@@ -51,6 +50,9 @@
         asyncLoad('https://fonts.googleapis.com/css?family=Raleway:200,700|Source+Sans+Pro:300,600,300italic,600italic')
       }())
     </script>
+
+    <script src="https://cdn.ravenjs.com/3.25.2/raven.min.js" crossorigin="anonymous"></script>
+    <script>Raven.config('%REACT_APP_SENTRY_DSN%').install()</script>
 
     <!-- modernizr cookies and localstorage -->
     <script src="/js/modernizr-custom.js"></script>
