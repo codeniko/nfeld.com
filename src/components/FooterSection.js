@@ -12,7 +12,7 @@ export default class FooterSection extends Component {
         <div className="inner">
           <h2 className="major">Get in touch</h2>
 
-          <ContactFormContainer />
+          <ContactFormContainer alert={this.props.alert} />
 
           <ul className="contact">
             <li className="fa-envelope"><Link href="mailto:niko@nfeld.com">niko@nfeld.com</Link></li>

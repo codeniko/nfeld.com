@@ -34,6 +34,7 @@ export default class ContactFormContainer extends Component {
   handleSubmit(e) {
     e.preventDefault()
     log.debug('handling submit')
+    const alert = this.props.alert
 
     if (!this.validateForm()) {
       log.debug('Form is missing fields or email is formatted incorrectly.')
@@ -74,6 +75,7 @@ export default class ContactFormContainer extends Component {
           alert('An error occured, please try again in a little bit.')
         } else {
           log.info('Contact submission server response', response)
+          alert("Message sent, thanks! I'll get back to you soon!")
           nextState.submitted = true
         }
         self.setState(nextState)

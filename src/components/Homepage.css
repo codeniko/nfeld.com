@@ -1,1 +1,41 @@
+.alert-modal {
+  color: #000;
+  font-size: 18px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  margin-right: -50%;
+  border: 1px solid rgb(255, 255, 255);
+  overflow: auto;
+  background: rgb(225, 225, 225);
+  border-radius: 4px;
+  outline: none;
+  padding: 20px;
+  transform: translate(-50%, -50%);
+}
 
+.alert-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(65, 67 , 67, .51);
+}
+
+.confirm-button-container {
+  text-align: right;
+  padding-top: 12px;
+}
+
+.confirm-button-container .actions {
+  margin: 0px;
+}
+
+.confirm-button-container .actions .confirm-button {
+  margin-left: 4px;
+  color: #000 !important;
+  border: 0px;
+}

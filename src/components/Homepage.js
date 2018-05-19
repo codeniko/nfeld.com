@@ -3,7 +3,9 @@ import ga from '../lib/ga-utils'
 import log from 'loglevel'
 
 //import NavHeader from './NavHeader'
+import Modal from 'react-modal'
 import Banner from './Banner'
+import Button from './Button'
 import SectionContainer from './SectionContainer'
 import FooterSection from './FooterSection'
 import Link from './Link'
@@ -49,6 +51,8 @@ const androidMail = {
   subtitle: 'Currently wowing 200k users with new experiences on the Yahoo Mail app for Android.',
 }
 
+Modal.setAppElement('#root')
+
 export default class Homepage extends Component {
 
   constructor(props) {
@@ -57,6 +61,8 @@ export default class Homepage extends Component {
     this.state = {
     }
 
+    this.alert = this.alert.bind(this)
+    this.closeAlertModal = this.closeAlertModal.bind(this)
   }
 
   componentDidMount() {
@@ -68,6 +74,14 @@ export default class Homepage extends Component {
     }, 1000)
   }
 
+  alert(alert) {
+    this.setState({ alert })
+  }
+
+  closeAlertModal() {
+    this.setState({ alert: undefined })
+  }
+
   render() {
     const sections = [
       androidMail,
@@ -76,14 +90,30 @@ export default class Homepage extends Component {
       iosSearchApp,
     ]
 
+    const {alert} = this.state
+
     return (
       <div className="Homepage page-wrapper">
+        <Modal
+          isOpen={alert && true}
+          className='alert-modal'
+          overlayClassName='alert-modal-overlay'
+          contentLabel='message modal'
+          onRequestClose={() => { this.closeAlertModal() }}
+          shouldCloseOnOverlayClick={true}
+          shouldCloseOnEsc={true}>
+          {typeof alert === 'object' && alert.__html ? <span dangerouslySetInnerHTML={alert}></span> : alert}
+          <div className='confirm-button-container'>
+            <Button onClick={() => this.closeAlertModal()} text='Close' extraClasses={{'confirm-button': true}}/>
+          </div>
+        </Modal>
+
         {/* <NavHeader /> */}
         <Banner title="Nikolay Feldman" subtitle="Software Engineer • motorcyclist • floormat for my cat" />
 
         <SectionContainer sections={sections} />
 
-        <FooterSection />
+        <FooterSection alert={this.alert}/>
 
       </div>
     )
