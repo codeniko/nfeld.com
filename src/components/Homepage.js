@@ -19,7 +19,7 @@ const popchat = {
     <span>
       <p>Inception and development of PopChat - a fun chatbot designed to provide personal assistance through a chat platform (Kik/Facebook). Ranked 2nd overall on Kik's bot shop, handling over 25 Million messages, peaking at ~500 requests per minute. Proxied over 200k messages between users before being discontinued November 30, 2017.</p>
       <p>Development with Scala, Play framework, and Akka clustering with focus on scalable functional programming.</p>
-      <p>Developed separate backend in python to utilize dlib and tensorflow to peform on-the-fly transformations on images given by users. <Link target="_blank" href="https://github.com/codeniko/shape_predictor_81_face_landmarks">Trained a facial recognition model containing 13 points around the forehead, totaling 81 facial landmarks which enabled more accurate transformations around the head.</Link> Used Protobuf for communication between the two backends. Created a QA tool for contractors to evaluate bot's image operation results on thousands of images.</p>
+      <p>Developed separate backend in python to utilize dlib and tensorflow to perform on-the-fly transformations on images given by users. <Link target="_blank" href="https://github.com/codeniko/shape_predictor_81_face_landmarks">Trained a facial recognition model containing 13 points around the forehead, totaling 81 facial landmarks which enabled more accurate transformations around the head.</Link> Used Protobuf for communication between the two backends. Created a QA tool for contractors to evaluate bot's image operation results on thousands of images.</p>
       <p><Link special target="_blank" href="https://yahoo.tumblr.com/post/153480238449/yahoo-brings-on-the-fun-bots-trivia-with-friends">See the bot's promotional post</Link></p>
     </span>,
 }
@@ -49,7 +49,8 @@ const mobileWeb = {
 const androidMail = {
   imgUrl: 'images/ymail.jpg',
   title: 'Yahoo Mail (Android)',
-  subtitle: 'Currently wowing 200k+ users with new experiences on the Yahoo Mail app for Android.',
+  subtitle: 'Working on new experiences for the Yahoo Mail app on Android.',
+  //Currently wowing 200k+ users with new experiences on the Yahoo Mail app for Android.',
 }
 
 Modal.setAppElement('#root')
