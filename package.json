@@ -23,14 +23,14 @@
     "clean": "rm -rf ./npm-debug.log ./build"
   },
   "dependencies": {
-    "classnames": "~2.2.5",
+    "classnames": "^2.2.6",
     "core-js": "^2.5.7",
     "loglevel": "~1.6.1",
     "prop-types": "~15.6.0",
     "querystring": "~0.2.0",
     "raf": "^3.4.0",
-    "react": "~16.4.0",
-    "react-dom": "~16.4.0",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
     "react-modal": "^3.4.5",
     "react-router": "~4.3.1",
     "react-router-dom": "~4.3.1",
