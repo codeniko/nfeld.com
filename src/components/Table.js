@@ -7,7 +7,7 @@ export class Table extends Component {
   render() {
     const { title, columnHeaders, footerComponent, alt, ...props } = this.props
 
-    const columnHeaderComponents = columnHeaders.map(header => <th>{header}</th>)
+    const columnHeaderComponents = columnHeaders.map(header => <th key={`header_${header}`}>{header}</th>)
     const tableClassName = classNames({ alt })
 
     return (
@@ -30,13 +30,13 @@ export class Table extends Component {
 export class Row extends Component {
   render() {
     const { span, ...props } = this.props
-    return <tr rowspan={span}>{props.children}</tr>
+    return <tr rowSpan={span}>{props.children}</tr>
   }
 }
 
 export class Column extends Component {
   render() {
     const { span, ...props } = this.props
-    return <td colspan={span}>{props.children}</td>
+    return <td colSpan={span}>{props.children}</td>
   }
 }

@@ -17,13 +17,13 @@ function setupLogging() {
   const originalFactory = log.methodFactory
   // methodName is actually logLevel? hmm
   log.methodFactory = function(methodName, logLevel, loggerName) {
-    var defaultHandler = originalFactory(methodName, logLevel, loggerName)
+    const defaultHandler = originalFactory(methodName, logLevel, loggerName)
     // send warn, error, and info logs to tracker
     if (methodName === 'warn' || methodName === 'error' || methodName === 'info') {
       return function() {
         // push all args into array and concat together as one message
-        var messages = []
-        for (var i = 0; i < arguments.length; i++) {
+        const messages = []
+        for (let i = 0; i < arguments.length; i++) {
           const arg = arguments[i]
           messages.push(typeof arg === 'object' ? JSON.stringify(arg) : arg)
         }

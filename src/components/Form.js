@@ -79,7 +79,7 @@ export class LabeledSelect extends Component {
 
     return (
       <LabeledInput inputId={id} {...props} >
-        <div class="select-wrapper">
+        <div className="select-wrapper">
           <select name={name || id} id={id} onChange={onChange}>
             {optionComponents}
           </select>

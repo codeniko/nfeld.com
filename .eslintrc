@@ -44,6 +44,7 @@
     "no-unused-vars": "warn",
     "react/prefer-es6-class": "error",
     "react/sort-comp": "off",
-    "react/prop-types": "warn"
+    "react/prop-types": "warn",
+    "react/no-unescaped-entities": "off"
   }
 }

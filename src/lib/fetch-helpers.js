@@ -4,7 +4,7 @@ export function checkStatus(response) {
   if (response.ok) {
     return response
   } else {
-    var error = new Error(response.statusText)
+    const error = new Error(response.statusText)
     error.response = response
     error.status = response.status
     throw error
@@ -35,7 +35,9 @@ function removeScript(id) {
 
   try {
     parent && parent.removeChild(script)
-  } catch (e) {}
+  } catch (e) {
+    // do nothing
+  }
 }
 
 function appendScript(script) {

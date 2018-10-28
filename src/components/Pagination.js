@@ -18,7 +18,7 @@ export default class Pagination extends Component {
     const paginationItemComponents = pageUrls.map((url, i) => {
       const page = i + 1
       const isActive = false
-      return <PaginationItem page={page} url={url} isActive={isActive} />
+      return <PaginationItem key={`pageitem_${page}`} page={page} url={url} isActive={isActive} />
     })
     this.insertEllipsis(paginationItemComponents, maxPages)
 
