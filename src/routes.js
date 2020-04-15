@@ -38,12 +38,15 @@ function setupLogging() {
   log.setLevel(process.env.NODE_ENV === 'production' ? log.levels.INFO : log.levels.TRACE)
 }
 
+const reload = () => window.location.reload()
+
 const Routes = (props) => (
   <Router>
     <div>
       {setupLogging()}
       <Switch>
         <Route path='/' component={Homepage} />
+        <Route path='/sitemap.xml' render={reload} />
         <Redirect to='/' />
       </Switch>
     </div>
