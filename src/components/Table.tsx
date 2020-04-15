@@ -1,13 +1,20 @@
-import React, { Component } from 'react'
+import React, {Component, ReactChild} from 'react'
 import classNames from 'classnames'
 
 import './Table.css'
 
-export class Table extends Component {
+type TableProps = {
+  title?: string;
+  columnHeaders: string[];
+  footerComponent?: ReactChild;
+  alt: string;
+}
+
+export class Table extends Component<TableProps> {
   render() {
     const { title, columnHeaders, footerComponent, alt, ...props } = this.props
 
-    const columnHeaderComponents = columnHeaders.map(header => <th key={`header_${header}`}>{header}</th>)
+    const columnHeaderComponents = columnHeaders.map((header: string) => <th key={`header_${header}`}>{header}</th>)
     const tableClassName = classNames({ alt })
 
     return (
@@ -29,12 +36,19 @@ export class Table extends Component {
 
 export class Row extends Component {
   render() {
-    const { span, ...props } = this.props
-    return <tr rowSpan={span}>{props.children}</tr>
+    return <tr>{this.props.children}</tr>
   }
 }
 
-export class Column extends Component {
+type ColumnProps = {
+  span: number
+}
+
+export class Column extends Component<ColumnProps> {
+  static defaultProps = {
+    span: 1
+  }
+
   render() {
     const { span, ...props } = this.props
     return <td colSpan={span}>{props.children}</td>

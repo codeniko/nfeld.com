@@ -43,7 +43,7 @@ const Routes = (props) => (
     <div>
       {setupLogging()}
       <Switch>
-        <Route exact path='/' component={Homepage} />
+        <Route path='/' component={Homepage} />
         <Redirect to='/' />
       </Switch>
     </div>

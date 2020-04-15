@@ -3,7 +3,23 @@ import classNames from 'classnames'
 
 import './Section.css'
 
-export default class Section extends Component {
+export type SectionProps = {
+  order: number;
+  alt: boolean;
+  imgUrl?: string;
+  title: string;
+  subtitle?: string | React.ReactNode;
+}
+
+export default class Section extends Component<SectionProps> {
+  static defaultProps = {
+    order: 0,
+    alt: false,
+    imgUrl: null,
+    title: '',
+    subtitle: null
+  }
+
   render() {
     const { order, alt, imgUrl, title, subtitle } = this.props
     const sectionClassName = classNames('wrapper', 'spotlight', {

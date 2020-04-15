@@ -1,4 +1,4 @@
-import { loadScript } from './fetch-helpers'
+import {loadScript, LoadScriptResult} from './fetch-helpers'
 import { getCookie, setCookie, readFromStorage, writeToStorage } from './utils'
 import uuidv4 from 'uuid/v4'
 import querystring from 'querystring'
@@ -7,12 +7,12 @@ import log from 'loglevel'
 const COOKIE_KEY = 'CID'
 const { REACT_APP_GA_ID, REACT_APP_API_HOSTNAME, REACT_APP_API_GA_PATH } = process.env
 
-function fetchAndLoadGtag() {
+function fetchAndLoadGtag(): Promise<LoadScriptResult | Error> {
   const endpoint = 'https://www.googletagmanager.com/gtag/js?id=' + REACT_APP_GA_ID
   return loadScript(endpoint)
 }
 
-function getCidFromGaCookie() {
+function getCidFromGaCookie(): string {
   const gaCookie = getCookie('_ga')
   if (gaCookie) {
     const cookieSplit = gaCookie.split('.')
@@ -20,10 +20,11 @@ function getCidFromGaCookie() {
       return `${cookieSplit[2]}.${cookieSplit[3]}`
     }
   }
+  return ''
 }
 
 // Use our API server to log pageview if client's browser is blocking google analytics
-function logPageviewOnServerSide() {
+function logPageviewOnServerSide(): void {
   // prioritize _ga cookie if set by google analytics previously
   let cid = getCidFromGaCookie() || getCookie(COOKIE_KEY) || readFromStorage(COOKIE_KEY)
   log.debug('existing cid', cid)
@@ -56,7 +57,10 @@ function logPageviewOnServerSide() {
     cid, // client id
     tid: REACT_APP_GA_ID, // tracking id
   }
-  Object.keys(params).forEach(key => { ( params[key] === undefined || (typeof params[key] === 'string' && params[key].length === 0) ) && delete params[key] }) // remove invalid key/value pairs
+  Object.keys(params).forEach(key => {
+    // @ts-ignore
+    ( params[key] === undefined || (typeof params[key] === 'string' && params[key].length === 0) ) && delete params[key]
+  }) // remove invalid key/value pairs
 
   fetch(`${REACT_APP_API_HOSTNAME}${REACT_APP_API_GA_PATH}?${querystring.stringify(params)}`)
     .then(function() {
@@ -68,7 +72,7 @@ function logPageviewOnServerSide() {
 }
 
 // Check if GA is defined, if not, try to refetch gtag, and log pageview through server if request is blocked.
-function refetchGtagOrLogThroughServer() {
+function refetchGtagOrLogThroughServer(): void {
   fetchAndLoadGtag()
     .then(function() {
       log.info('ga refetch success. ga loaded?', window.ga !== undefined) // dont do anything, pageview auto recorded
