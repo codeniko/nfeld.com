@@ -16,6 +16,11 @@ function sendMail(req, res) {
   const {from, name, message} = req.body
 
   console.info('POST payload:', req.body)
+  if (message.split(' ').length <= 5) {
+    console.info('message is spam, ignoring')
+    res.status(200).send({success: false})
+    return
+  }
 
   const text = `Name: ${name}\nEmail: ${from}\n\n${message}`
 
