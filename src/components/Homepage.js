@@ -40,7 +40,7 @@ const mobileWeb = {
   subtitle:
     <span>
       <p>Development on scalable, ReactJs based search.yahoo.com optimized for mobile browsers utilized by hundreds of millions of users.</p>
-      <p>A/B testing of all new features, continuous delivery and strive for >90% code coverage.</p>
+      <p>A/B testing of all new features, continuous delivery and strive for &gt;90% code coverage.</p>
       <p>Contributed to implementation and tracking to Search for Yahoo's partnership with DoSomething.org, where Yahoo donated 10 cents per search in an effort to raise awareness and drive support for global issues.</p>
       <p><Link special target="_blank" href="https://bit.ly/searchtober">See our launch Announcement</Link></p>
   </span>,
