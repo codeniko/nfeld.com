@@ -30,7 +30,7 @@ const iosSearchApp = {
   subtitle:
     <span>
       <p>Acquired ownership of Yahoo's native iOS Yahoo Search app and backends. Redesigned the app in the direction of contextual search, exploration, and personalization.</p>
-      <p>Increased user engagement on the homescreen by 3X, before the app was abandoned and sunk to 2.5 stars.</p>
+      <p>Increased user engagement on the homescreen by 3X.</p>
     </span>
 }
 
