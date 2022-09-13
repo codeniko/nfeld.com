@@ -37,7 +37,6 @@ const About = () => {
                 Fullstack software engineer<br/><br/>
             </Typography>
             <Typography
-                data-aos={'fade-right'}
                 variant="h6"
                 component="p"
                 color="text.secondary"
@@ -50,7 +49,6 @@ const About = () => {
                 <b>Backend:</b><br/> NodeJs, Scala+Play<br/><br/>
             </Typography>
             <Typography
-                data-aos={'fade-left'}
                 variant="h6"
                 component="p"
                 color="text.secondary"
@@ -111,7 +109,6 @@ const About = () => {
                         justifyContent={'center'}
                     >
                         <Box
-                            data-aos={'fade-up'}
                             display="flex"
                             width={200}
                             justifyContent={'space-between'}
