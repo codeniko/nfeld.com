@@ -41,7 +41,7 @@ const KungFuChess = () => {
                 <br/>
                 Built with the LibGDX game framework and Kotlin as the client language, with NodeJs handling the server-side game state, matchmaking state, and logging.
                 <br/><br/>
-                <ThemedLink secondary href={'https://play.google.com/store/apps/details?id=com.nfeld.kungfuchess'} target={'_blank'}>Find app on the <PlayStoreSvg width={16}/> Play Store</ThemedLink>
+                <ThemedLink secondary bold href={'https://play.google.com/store/apps/details?id=com.nfeld.kungfuchess'} target={'_blank'}>Find app on the <PlayStoreSvg width={16}/> Play Store</ThemedLink>
             </Typography>
         </Box>
     )

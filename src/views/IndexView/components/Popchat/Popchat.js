@@ -38,8 +38,8 @@ const Popchat = () => {
                 <br/><br/>
                 Ran a separate backend in python to use dlib+tensorflow to perform on-the-fly transformations on images given by users. Trained a facial recognition model containing 13 points around the forehead, totaling 81 facial landmarks which enabled more accurate transformations around the head. Created a QA tool for contractors to evaluate bot's image operation results on thousands of images.
                 <br/><br/>
-                <ThemedLink secondary href={'https://yahoo.tumblr.com/post/153480238449/yahoo-brings-on-the-fun-bots-trivia-with-friends'} target={'_blank'}>See bot's promotional post</ThemedLink><br/>
-                <ThemedLink secondary href={'https://github.com/codeniko/shape_predictor_81_face_landmarks'} target={'_blank'}><GithubIcon/> See facial recognition model I trained</ThemedLink><br/>
+                <ThemedLink secondary bold href={'https://yahoo.tumblr.com/post/153480238449/yahoo-brings-on-the-fun-bots-trivia-with-friends'} target={'_blank'}>See bot's promotional post</ThemedLink><br/>
+                <ThemedLink secondary bold href={'https://github.com/codeniko/shape_predictor_81_face_landmarks'} target={'_blank'}><GithubIcon/> See facial recognition model I trained</ThemedLink><br/>
             </Typography>
         </Box>
     )

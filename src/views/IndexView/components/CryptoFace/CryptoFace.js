@@ -41,8 +41,8 @@ const CryptoFace = () => {
                 Developed the first Google Analytics 4 npm module specifically designed for fitbit projects. Simplifies the communication needed between the client-side watchface and the companion
                 responsible for sending data to GA4.
                 <br/><br/>
-                <ThemedLink secondary href={'https://github.com/codeniko/CryptoFace'} target={'_blank'}><GithubIcon/> See watchface code</ThemedLink><br/>
-                <ThemedLink secondary href={'https://github.com/codeniko/fitbit-ga4'} target={'_blank'}><GithubIcon/> See Google Analytics 4 module code</ThemedLink><br/>
+                <ThemedLink secondary bold href={'https://github.com/codeniko/CryptoFace'} target={'_blank'}><GithubIcon/> See watchface code</ThemedLink><br/>
+                <ThemedLink secondary bold href={'https://github.com/codeniko/fitbit-ga4'} target={'_blank'}><GithubIcon/> See Google Analytics 4 module code</ThemedLink><br/>
             </Typography>
         </Box>
     )

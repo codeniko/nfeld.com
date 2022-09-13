@@ -59,7 +59,7 @@ const YahooMail = () => {
                 Submitted a patent request.
 
                 <br/><br/>
-                <ThemedLink secondary href={'https://play.google.com/store/apps/details?id=com.yahoo.mobile.client.android.mail'} target={'_blank'}>Find app on the <PlayStoreSvg width={16}/> Play Store</ThemedLink>
+                <ThemedLink secondary bold href={'https://play.google.com/store/apps/details?id=com.yahoo.mobile.client.android.mail'} target={'_blank'}>Find app on the <PlayStoreSvg width={16}/> Play Store</ThemedLink>
 
             </Typography>
 

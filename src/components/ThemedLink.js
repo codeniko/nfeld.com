@@ -36,6 +36,7 @@ function ThemedLink(props) {
     const linkColor = isHovering ? hoverColor : color
     const className = ''
     const target = props.target || '_self'
+    const fontWeight = (props.bold && 700) || 400
 
     const coloredChildren = React.Children.map(props.children, child => {
         if (React.isValidElement(child)) {
@@ -50,6 +51,7 @@ function ThemedLink(props) {
               onMouseEnter={() => setIsHovering(true)}
               sx={{
                   color,
+                  fontWeight,
                   '&:link': {
                       color,
                       textDecoration: 'none',
