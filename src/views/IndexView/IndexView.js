@@ -200,9 +200,7 @@ const IndexView = () => {
                 {/*/>*/}
                 <Box
                     className={'jarallax-img'}
-                    sx={yahooStyles(
-                        '/yahoo_mail.png',
-                    )}
+                    sx={yahooStyles('/yahoo_mail.png',)}
                 />
                 <Container zIndex={2}>
                     <YahooMail/>

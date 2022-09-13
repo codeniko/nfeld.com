@@ -45,7 +45,7 @@ const About = () => {
                     fontWeight: 400,
                 }}
             >
-                <b>Frontend:</b><br/> ReactJs/NextJs+Redux, Android/Kotlin/Java, iOS/Swift<br/>
+                <b>Frontend:</b><br/> ReactJs/NextJs+Redux, Android/Kotlin/Java, iOS/Swift<br/><br/>
                 <b>Backend:</b><br/> NodeJs, Scala+Play<br/><br/>
             </Typography>
             <Typography
