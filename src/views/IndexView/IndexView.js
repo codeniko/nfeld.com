@@ -79,7 +79,8 @@ const IndexView = () => {
         backgroundPosition: 'center center',
         backgroundImage: `url(${bgImage})`,
         backgroundColor: '#430297',
-        filter: `brightness(0.5)`,
+        filter: `brightness(0.35)`,
+        opacity: 0.85,
         // filter: theme.palette.mode === 'dark' ? 'brightness(0.6)' : 'none',
     })
 
@@ -217,7 +218,7 @@ const IndexView = () => {
             >
                 <Box
                     className={'jarallax-img'}
-                    sx={styles('/kungfuchess.jpg', '0.3', 'contain', { backgroundColor: '#000000' })}
+                    sx={styles('/kungfuchess.jpg', '0.4', 'contain', { backgroundColor: '#000000' })}
                 />
                 <Container>
                     <KungFuChess/>
@@ -234,7 +235,7 @@ const IndexView = () => {
             >
                 <Box
                     className={'jarallax-img'}
-                    sx={styles('/popchat1.jpg', '0.45', 'cover', { backgroundColor: '#ffffff' })}
+                    sx={styles('/popchat1.jpg', '0.40', 'cover', { backgroundColor: '#ffffff' })}
                 />
                 <Container
                     paddingY={{ xs: 8 }}
