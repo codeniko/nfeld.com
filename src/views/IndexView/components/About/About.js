@@ -12,7 +12,7 @@ const About = () => {
     const theme = useTheme()
 
     const socialIconColor = theme.palette.secondary.main
-    const socialIconHoverColor = alpha(theme.palette.secondary.main, 0.4)
+    const socialIconHoverColor = alpha(theme.palette.secondary.main, 0.7)
 
     const GridItemHeadlineBlock = () => (
         <Box>
