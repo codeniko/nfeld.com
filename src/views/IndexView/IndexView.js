@@ -238,7 +238,9 @@ const IndexView = () => {
                     className={'jarallax-img'}
                     sx={styles('/popchat1.jpg', '0.45', 'cover', { backgroundColor: '#ffffff' })}
                 />
-                <Container>
+                <Container
+                    paddingY={{ xs: 8 }}
+                >
                     <Popchat/>
                 </Container>
             </Box>

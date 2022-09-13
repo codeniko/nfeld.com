@@ -8,7 +8,6 @@ import LinkedIcon from 'components/LinkedIcon'
 import { Twitter, Instagram, LinkedIn, Facebook, GitHub, EmailSharp as Email } from '@mui/icons-material'
 import { alpha } from '@mui/material'
 
-
 const About = () => {
     const theme = useTheme()
 
@@ -61,7 +60,7 @@ const About = () => {
                 }}
             >
                 <b>Additional experience:</b><br/>
-                Unit/Integration/UI testing, Reverse engineering, Shell scripting, Unix server management, C/C++, C#, PHP, SQL
+                Unit/Integration/UI testing, Reverse engineering, Shell scripting, Unix server management, Python, Protobuff, C/C++, C#, PHP, SQL
             </Typography>
         </Box>
     )
