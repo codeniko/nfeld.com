@@ -87,7 +87,7 @@ const IndexView = () => {
     const isMd = useMediaQuery(theme.breakpoints.up('md'), {
         defaultMatches: true,
     })
-    const nikoPhoto = isMd ? '/me-rect2.jpg' : 'me-square.jpg'
+    const nikoPhoto = isMd ? '/me-rect2.jpg' : 'me-rect2-portrait.jpg'
     const yahooVideoBackground = isMd ? '/yahoo_landscape.mp4' : '/yahoo_portrait.mp4'
 
     return (
