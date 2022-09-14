@@ -70,9 +70,9 @@ const Main = ({ children, colorInvert = false, bgcolor = 'transparent' }) => {
                 {children}
                 {/*<Divider />*/}
             </main>
-            {/*<Container paddingY={4}>*/}
-            {/*    <Footer/>*/}
-            {/*</Container>*/}
+            <Container paddingY={4}>
+                <Footer/>
+            </Container>
         </Box>
     )
 }

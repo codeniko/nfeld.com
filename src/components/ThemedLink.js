@@ -47,6 +47,8 @@ function ThemedLink(props) {
 
     return (
         <Link className={className} href={props.href} target={target}
+              underline='none'
+              component='a'
               onMouseLeave={() => setIsHovering(false)}
               onMouseEnter={() => setIsHovering(true)}
               sx={{
@@ -54,19 +56,15 @@ function ThemedLink(props) {
                   fontWeight,
                   '&:link': {
                       color,
-                      textDecoration: 'none',
                   },
                   '&:visited': {
                       color,
-                      textDecoration: 'none',
                   },
                   '&:hover': {
                       color: hoverColor,
-                      textDecoration: 'none',
                   },
                   '&:active': {
                       color,
-                      textDecoration: 'none',
                   },
               }}
         >
