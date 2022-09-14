@@ -27,9 +27,6 @@ export default class MyDocument extends Document {
                         href="/favicon.ico"
                     />
 
-                    {/*Stop search engines from indexing*/}
-                    <meta name="robots" content="noindex"/>
-
                     <meta name="theme-color" content="#000000"/>
                     <meta property="og:site_name" content="Nikolay Feldman"/>
                     <meta name="keywords" content="nikolay feldman,nikolay,feldman,software engineer,rutgers,silicon valley,bay area,yahoo,mail,kotlin,kung fu chess, kungfuchess,scala,popchat,kik,cryptoface,fitbit"/>
