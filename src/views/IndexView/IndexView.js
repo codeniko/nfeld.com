@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useTheme } from '@mui/material/styles'
 import Box from '@mui/material/Box'
 import NoSsr from '@mui/material/NoSsr'
-import Image from 'next/image'
+import Image from 'next/future/image'
 import useMediaQuery from '@mui/material/useMediaQuery'
 
 import Main from 'layouts/Main'
@@ -15,6 +15,11 @@ import {
     Popchat,
     KungFuChess,
 } from './components'
+
+import NikoImage from './images/nikolay_feldman.jpg'
+// import NikoPortraitImage from './images/nikolay_feldman_portrait.jpg'
+import CryptoFaceImage from './images/cryptoface.png'
+import PopchatImage from './images/popchat1.jpg'
 
 const IndexView = () => {
     useEffect(() => {
@@ -87,8 +92,26 @@ const IndexView = () => {
     const isMd = useMediaQuery(theme.breakpoints.up('md'), {
         defaultMatches: true,
     })
-    const nikoPhoto = isMd ? '/me-rect2.jpg' : 'me-rect2-portrait.jpg'
     const yahooVideoBackground = isMd ? '/yahoo_landscape.mp4' : '/yahoo_portrait.mp4'
+
+    const backgroundImage = (image, alt, brightness, objectFit = 'cover', additionalStyles = {}) => (
+        <Image
+            priority={image === NikoImage}
+            placeholder={image === NikoImage ? 'empty' : 'blur'}
+            src={image}
+            fill
+            style={{
+                objectFit: objectFit,
+                /* support for plugin https://github.com/bfred-it/object-fit-images */
+                fontFamily: `object-fit: ${objectFit}`,
+                filter: `brightness(${brightness})`,
+                ...additionalStyles,
+            }}
+            className={'jarallax-img'}
+            alt={alt}
+        />
+    )
+
 
     return (
         <Main>
@@ -136,10 +159,7 @@ const IndexView = () => {
                 display={'flex'}
                 alignItems={'center'}
             >
-                <Box
-                    className={'jarallax-img'}
-                    sx={styles(nikoPhoto, '0.3', 'cover', { backgroundColor: '#000000' })}
-                />
+                {backgroundImage(NikoImage, 'Photo of Nikolay Feldman', 0.3, 'cover', { backgroundColor: '#000000' })}
                 <Container>
                     <Box display={'flex'} flexDirection={'column'} alignItems={'center'}>
                         <About/>
@@ -201,7 +221,7 @@ const IndexView = () => {
                 {/*/>*/}
                 <Box
                     className={'jarallax-img'}
-                    sx={yahooStyles('/yahoo_mail.png',)}
+                    sx={yahooStyles('/yahoo_mail.png')}
                 />
                 <Container zIndex={2}>
                     <YahooMail/>
@@ -233,10 +253,7 @@ const IndexView = () => {
                 display={'flex'}
                 alignItems={'center'}
             >
-                <Box
-                    className={'jarallax-img'}
-                    sx={styles('/popchat1.jpg', '0.40', 'cover', { backgroundColor: '#ffffff' })}
-                />
+                {backgroundImage(PopchatImage, 'Popchat bot on Kik', 0.4, 'cover', { backgroundColor: '#ffffff' })}
                 <Container
                     paddingY={{ xs: 8 }}
                 >
@@ -253,10 +270,7 @@ const IndexView = () => {
                 alignItems={'center'}
                 id="agency__portfolio-item--js-scroll"
             >
-                <Box
-                    className={'jarallax-img'}
-                    sx={styles('/cryptoface.png', '0.45', 'cover', { backgroundColor: '#ffffff' })}
-                />
+                {backgroundImage(CryptoFaceImage, 'CryptoFace watchface for fitbit', 0.45, 'cover', { backgroundColor: '#ffffff' })}
                 <Container>
                     <CryptoFace/>
                 </Container>
