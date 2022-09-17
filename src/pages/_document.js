@@ -23,11 +23,6 @@ export default class MyDocument extends Document {
             <Html lang="en">
                 <Head>
                     <meta charSet="utf-8"/>
-                    <link
-                        rel="shortcut icon"
-                        href="/favicon.ico"
-                    />
-
                     <meta name="theme-color" content="#000000"/>
                     <meta property="og:site_name" content="Nikolay Feldman"/>
                     <meta name="keywords" content="nikolay feldman,nikolay,feldman,software engineer,rutgers,silicon valley,bay area,yahoo,mail,kotlin,kung fu chess, kungfuchess,scala,popchat,kik,cryptoface,fitbit"/>
