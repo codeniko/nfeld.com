@@ -4,6 +4,7 @@ import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { CacheProvider } from '@emotion/react'
 import createCache from '@emotion/cache'
 import createEmotionServer from '@emotion/server/create-instance'
+import * as gtag from '../lib/gtag'
 
 const title = process.env.NEXT_PUBLIC_MAIN_TITLE
 const description = process.env.NEXT_PUBLIC_MAIN_DESCRIPTION
@@ -62,13 +63,13 @@ export default class MyDocument extends Document {
                     <link rel="shortcut icon" href="/favicon.ico"/>
                 </Head>
                 <body>
-                {/*<noscript>*/}
-                {/*  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N8WR8NZ"*/}
-                {/*          height="0"*/}
-                {/*          width="0"*/}
-                {/*          style={{ display: 'none', visibility: 'hidden' }}*/}
-                {/*  />*/}
-                {/*</noscript>*/}
+                <noscript>
+                    <iframe src={`https://www.googletagmanager.com/ns.html?id=${gtag.GA_TRACKING_ID}`}
+                            height="0"
+                            width="0"
+                            style={{ display: 'none', visibility: 'hidden' }}
+                    />
+                </noscript>
                 <Main/>
                 <NextScript/>
                 </body>
