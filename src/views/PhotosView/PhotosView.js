@@ -36,7 +36,7 @@ const PhotosView = () => {
                             fontWeight: 700,
                         }}
                     >
-                        These are photos for search indexing. You're likely looking for the homepage.<br/>
+                        These are photos for search indexing. You're likely looking for the homepage.<br/><br/>
                         Tap the photos on mobile for fun facts though!
                     </Typography>
                     <Link href='/' passHref>

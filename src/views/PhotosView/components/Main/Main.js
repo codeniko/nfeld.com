@@ -9,6 +9,12 @@ import { useTheme } from '@mui/material/styles'
 const leftGrid = [
     {
         image: '/photos/nikolay_feldman.jpg',
+        title: 'Nikolay Feldman',
+        description: `He uses this photo everywhere. It's not even good...`,
+        alt: 'Photo of Nikolay Feldman'
+    },
+    {
+        image: '/photos/nikolay_feldman_recent.jpg',
         title: 'Nikolay looking all cool',
         description: 'All the chicken is burnt though.',
     },
