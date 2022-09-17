@@ -11,22 +11,25 @@ const leftGrid = [
         image: '/photos/nikolay_feldman.jpg',
         title: 'Nikolay Feldman',
         description: `He uses this photo everywhere. It's not even good...`,
-        alt: 'Photo of Nikolay Feldman'
+        alt: 'Photo of Nikolay Feldman',
     },
     {
         image: '/photos/nikolay_feldman_recent.jpg',
         title: 'Nikolay looking all cool',
         description: 'All the chicken is burnt though.',
+        alt: 'Nikolay with long hair',
     },
     {
         image: '/photos/nikolay_feldman1.jpg',
         title: 'Nikolay Feldman + Marissa Mayer',
         description: `Probably Nikolay's biggest achievement at Yahoo.`,
+        alt: 'Nikolay at Yahoo with Marissa Mayer',
     },
     {
         image: '/photos/nikolay_feldman_belarus.jpg',
         title: 'Can I look any more Russian?',
-        description: 'Belarus consulates need to update their website with passport renewal instructions... No I wont call you to figure out how to renew my expired passport.'
+        description: 'Belarus consulates need to update their website with passport renewal instructions... No I wont call you to figure out how to renew my expired passport.',
+        alt: 'Nikolay in Belarus',
     },
 ]
 
@@ -35,16 +38,19 @@ const middleGrid = [
         image: '/photos/nikolay_feldman2.png',
         title: 'Nikolay is vaccinated',
         description: 'Coronavirus is no joke...',
+        alt: 'Nikolay with a mask',
     },
     {
         image: '/photos/nikolay_feldman3.jpg',
         title: 'Nikolay shops sometimes',
         description: `He doesn't remember the last time he bought a t-shirt though.`,
+        alt: 'Nikolay at a store',
     },
     {
         image: '/photos/nikolay_feldman_drawing.jpg',
         title: 'Nikolay needs a hobby',
         description: `This isn't it though, he's not talented enough to draw this...`,
+        alt: 'A drawing of Nikolay',
     },
 ]
 
@@ -54,16 +60,19 @@ const rightGrid = [
         image: '/photos/nikolay_feldman4.png',
         title: 'Nikolay likes motorcycles',
         description: `Fun fact: Niko bought his motorcycle the first day after landing in California after graduating Uni.`,
+        alt: 'Nikolay on a motorcycle',
     },
     {
         image: '/photos/nikolay_feldman5.jpg',
         title: 'Is paypal hiring?',
         description: 'Nikolay gets interested in the weirdest of things',
+        alt: 'Nikolay looking at a door',
     },
     {
         image: '/photos/nikolay_feldman_little_hacker.jpg',
         title: 'Niko was so cute, what happened?',
         description: 'It was on this day that I realized Nodejs is the only real dev language.',
+        alt: 'Nikolay as a child',
     },
 ]
 
@@ -73,7 +82,8 @@ const Column = ({ data }) => {
         <Box>
             {data.map((item, i) => {
                 const title = item.title
-                const description = item.description || title
+                const description = item.description || ''
+                const alt = item.alt || title
 
                 return <Box
                     key={i}
@@ -106,7 +116,7 @@ const Column = ({ data }) => {
                             height={1}
                             width={1}
                             src={item.image}
-                            alt={title}
+                            alt={alt}
                             effect="blur"
                             maxHeight={{ xs: 400, sm: 600, md: 1 }}
                             sx={{
