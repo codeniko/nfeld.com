@@ -8,4 +8,6 @@ export default {
     image: '/photos/nikolay_feldman.jpg',
     imageAlt: 'Photo of Nikolay Feldman',
     keywords: `nikolay feldman,nikolay,feldman,software engineer,rutgers,silicon valley,bay area,yahoo,mail,kotlin,kung fu chess, kungfuchess,scala,popchat,kik,cryptoface,fitbit`,
+    twitter: '@codeniko',
+    twitterCard: 'summary',
 }

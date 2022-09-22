@@ -36,6 +36,13 @@ export default class MyDocument extends Document {
                     <meta property="og:url" content={seo.homeUrl}/>
                     <meta property="og:image" content={seo.homeUrl + seo.image}/>
                     {seo.imageAlt ? <meta property="og:image:alt" content={seo.imageAlt} /> : ''}
+
+                    <meta name="twitter:image" content={seo.homeUrl + seo.image}/>
+                    {seo.imageAlt ? <meta property="twitter:image:alt" content={seo.imageAlt} /> : ''}
+                    <meta name="twitter:card" content={seo.twitterCard}/>
+                    <meta name="twitter:site" content={seo.twitter}/>
+                    <meta name="twitter:title" content={seo.title}/>
+                    <meta name="twitter:description" content={seo.description}/>
                     {/*END OF SEO*/}
 
                     <link rel="preconnect" href="https://fonts.gstatic.com"/>

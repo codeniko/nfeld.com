@@ -4,6 +4,7 @@ import Head from 'next/head'
 import Script from 'next/script'
 import * as gtag from '../lib/gtag'
 import { useRouter } from 'next/router'
+import seo from 'lib/seo'
 
 import Page from '../components/Page'
 
@@ -35,7 +36,7 @@ export default function App({ Component, pageProps }) {
                     name="viewport"
                     content="width=device-width, initial-scale=1, shrink-to-fit=no"
                 />
-                <title>{process.env.NEXT_PUBLIC_MAIN_TITLE}</title>
+                <title>{seo.title}</title>
             </Head>
             <Page>
                 {/* Global Site Tag (gtag.js) - Google Analytics */}
