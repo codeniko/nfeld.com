@@ -5,10 +5,8 @@ import { CacheProvider } from '@emotion/react'
 import createCache from '@emotion/cache'
 import createEmotionServer from '@emotion/server/create-instance'
 import * as gtag from '../lib/gtag'
+import seo from 'lib/seo'
 
-const title = process.env.NEXT_PUBLIC_MAIN_TITLE
-const description = process.env.NEXT_PUBLIC_MAIN_DESCRIPTION
-const homeUrl = process.env.NEXT_PUBLIC_HOME_URL
 
 const getCache = () => {
     const cache = createCache({ key: 'css', prepend: true })
@@ -22,32 +20,24 @@ export default class MyDocument extends Document {
         return (
             <Html lang="en">
                 <Head>
+                    {/*SEO*/}
                     <meta charSet="utf-8"/>
                     <meta name="theme-color" content="#000000"/>
-                    <meta property="og:site_name" content="Nikolay Feldman"/>
-                    <meta name="keywords" content="nikolay feldman,nikolay,feldman,software engineer,rutgers,silicon valley,bay area,yahoo,mail,kotlin,kung fu chess, kungfuchess,scala,popchat,kik,cryptoface,fitbit"/>
-                    <meta
-                        name="description"
-                        content={description}
-                    />
-                    <meta
-                        name="robots"
-                        content="max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-                    />
+                    <meta name="keywords" content={seo.keywords}/>
+                    <meta name="description" content={seo.description}/>
+                    {seo.shouldIndex ?
+                        <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1"/> :
+                        <meta name="robots" content="noindex"/>}
+                    {seo.siteName ? <meta property="og:site_name" content={seo.siteName}/> : ''}
                     <meta property="og:locale" content="en_US"/>
-                    <meta property="og:type" content="website"/>
-                    <meta
-                        property="og:title"
-                        content={title}
-                    />
-                    <meta
-                        property="og:description"
-                        content={description}
-                    />
-                    <meta
-                        property="og:url"
-                        content={homeUrl}
-                    />
+                    <meta property="og:type" content={seo.type}/>
+                    <meta property="og:title" content={seo.title}/>
+                    <meta property="og:description" content={seo.description}/>
+                    <meta property="og:url" content={seo.homeUrl}/>
+                    <meta property="og:image" content={seo.homeUrl + seo.image}/>
+                    {seo.imageAlt ? <meta property="og:image:alt" content={seo.imageAlt} /> : ''}
+                    {/*END OF SEO*/}
+
                     <link rel="preconnect" href="https://fonts.gstatic.com"/>
                     <link
                         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
