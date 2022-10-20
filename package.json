@@ -10,6 +10,7 @@
     "start": "next start",
     "prettier:fix": "prettier './src/**/*.js' --write",
     "eslint:fix": "eslint ./src --fix",
+    "eslint": "eslint ./src ",
     "codeStyle:fix": "npm run prettier:fix && npm run eslint:fix",
     "clear-all": "rimraf ./node_modules ./.next"
   },
