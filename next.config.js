@@ -1,5 +1,25 @@
 const { withSentryConfig } = require('@sentry/nextjs')
 
+// https://nextjs.org/docs/advanced-features/security-headers
+// https://securityheaders.com to test security header score
+const ContentSecurityPolicy = `
+  default-src data: 'unsafe-inline' 'unsafe-eval' https:;
+`
+
+const securityHeaders = [
+  { key: 'X-DNS-Prefetch-Control', value: 'on' },
+  { key: 'Strict-Transport-Security', value: 'max-age=63072000; includeSubDomains; preload' },
+  { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
+  { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=()'}, // browsing-topics=()}
+  { key: 'X-Content-Type-Options', value: 'nosniff' },
+  { key: 'X-XSS-Protection', value: '1; mode=block' }, // optional, mostly for legacy browsers
+  { key: 'Referrer-Policy', value: 'no-referrer-when-downgrade' },
+  {
+    key: 'Content-Security-Policy',
+    value: ContentSecurityPolicy.replace(/\s{2,}/g, ' ').trim()
+  },
+]
+
 const moduleExports = {
   webpack(config) {
     config.module.rules.push({
@@ -11,6 +31,19 @@ const moduleExports = {
     return config
   },
 
+  async headers() {
+    const isDev = process.env.NODE_ENV === 'development'
+
+    if (!isDev) {
+      return [{
+        // Apply these headers to all routes.
+        source: '/:path*', headers: securityHeaders,
+      }]
+    } else {
+      return [] // set no headers in dev. Comment if testing the above
+    }
+  },
+
   sentry: {
     // Use `hidden-source-map` rather than `source-map` as the Webpack `devtool`
     // for client-side builds. (This will be the default starting in
@@ -20,6 +53,8 @@ const moduleExports = {
     // for more information.
     hideSourceMaps: true,
   },
+
+  poweredByHeader: false,
 }
 
 const sentryWebpackPluginOptions = {
