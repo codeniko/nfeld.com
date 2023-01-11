@@ -16,7 +16,8 @@ import {
     KungFuChess,
 } from './components'
 
-import NikoImage from './images/nikolay_feldman.jpg'
+// import NikoImage from './images/nikolay_feldman.jpg'
+import TopImage from './images/top-bg.jpg'
 // import NikoPortraitImage from './images/nikolay_feldman_portrait.jpg'
 import CryptoFaceImage from './images/cryptoface.png'
 import PopchatImage from './images/popchat1.jpg'
@@ -96,8 +97,8 @@ const IndexView = () => {
 
     const backgroundImage = (image, alt, brightness, objectFit = 'cover', additionalStyles = {}) => (
         <Image
-            priority={image === NikoImage}
-            placeholder={image === NikoImage ? 'empty' : 'blur'}
+            priority={image === TopImage}
+            placeholder={'blur'}
             src={image}
             fill
             style={{
@@ -159,7 +160,7 @@ const IndexView = () => {
                 display={'flex'}
                 alignItems={'center'}
             >
-                {backgroundImage(NikoImage, 'Photo of Nikolay Feldman', 0.3, 'cover', { backgroundColor: '#000000' })}
+                {backgroundImage(TopImage, '', 0.3, 'cover', { backgroundColor: '#000000' })}
                 <Container>
                     <Box display={'flex'} flexDirection={'column'} alignItems={'center'}>
                         <About/>
