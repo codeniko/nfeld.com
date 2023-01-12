@@ -90,9 +90,7 @@ const IndexView = () => {
         // filter: theme.palette.mode === 'dark' ? 'brightness(0.6)' : 'none',
     })
 
-    const isMd = useMediaQuery(theme.breakpoints.up('md'), {
-        defaultMatches: true,
-    })
+    const isMd = useMediaQuery(theme.breakpoints.up('md'), { defaultMatches: true, })
     const yahooVideoBackground = isMd ? '/yahoo_landscape.mp4' : '/yahoo_portrait.mp4'
 
     const backgroundImage = (image, alt, brightness, objectFit = 'cover', additionalStyles = {}) => (

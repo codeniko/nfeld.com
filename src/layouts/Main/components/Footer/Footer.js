@@ -9,7 +9,6 @@ import MuiLink from '@mui/material/Link'
 
 const Footer = () => {
     const theme = useTheme()
-    const { mode } = theme.palette
 
     return (
         <Grid container spacing={2}>
@@ -22,7 +21,7 @@ const Footer = () => {
                     flexDirection={{ xs: 'column', sm: 'row' }}
                 >
                     <Box display="flex" flexWrap={'wrap'} alignItems={'center'}>
-                        <Box marginTop={1} marginRight={2}>
+                        <Box marginTop={1} marginRight={4}>
                             <Link href="/" passHref>
                                 <MuiLink
                                     underline="none"
@@ -34,7 +33,7 @@ const Footer = () => {
                                 </MuiLink>
                             </Link>
                         </Box>
-                        <Box marginTop={1} marginRight={2}>
+                        <Box marginTop={1} marginRight={0}>
                             <Link href="/photos" passHref>
                                 <MuiLink
                                     underline="none"
@@ -42,7 +41,7 @@ const Footer = () => {
                                     color="text.primary"
                                     variant={'subtitle2'}
                                 >
-                                    Photos for search indexing
+                                    How does Niko even look like?
                                 </MuiLink>
                             </Link>
                         </Box>
