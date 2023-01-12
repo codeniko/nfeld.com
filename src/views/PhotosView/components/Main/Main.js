@@ -35,6 +35,12 @@ const leftGrid = [
 
 const middleGrid = [
     {
+        image: '/photos/nikolay-feldman-snowboard-jump.jpeg',
+        title: 'Nikolay snowboards!',
+        description: 'He wiped out pretty hard after this...',
+        alt: 'Nikolay Feldman doing a jump with his snowboard',
+    },
+    {
         image: '/photos/nikolay_feldman2.png',
         title: 'Nikolay is vaccinated',
         description: 'Coronavirus is no joke...',
