@@ -55,7 +55,7 @@ const Footer = () => {
                     color="text.secondary"
                     gutterBottom
                 >
-                    &copy; 2022, Nikolay Feldman (codeniko). All rights reserved
+                    &copy; 2023, Nikolay Feldman (codeniko). All rights reserved
                 </Typography>
             </Grid>
         </Grid>
